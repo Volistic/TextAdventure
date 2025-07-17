@@ -4,6 +4,7 @@ import time
 t = time
 
 file_exists = os.path.isfile("savefile.txt")
+os.system('cls')  # Clears the terminal
 
 #loads the file
 def load():
@@ -28,6 +29,7 @@ def areachooser(area):
         "54": Beginningarea,
         "64": SixtyFourthArea,
         "74": SeventyFourthArea,
+        "74-1": PlainsVillage,
         "84": EightyFourthArea
 
     }
@@ -66,10 +68,11 @@ def start():
 def Beginningarea():
     s = "54"
     save(s)
-    print("You are standing in a field of grass")
+    print("You are standing in a field of grass.\n" \
+    "to move around type 'n' 's' 'e' or 'w'.")
     choice = input("> ").lower()
     if choice == "n" or choice == "north":
-        Beginningarea()
+        SixtyFourthArea()
     else:
         print("Invalid input")
         t.sleep(1)
@@ -81,7 +84,7 @@ def SixtyFourthArea():
     print("you are in a field of grass, in the distance is a village.")
     choice = input("> ")
     if choice == "n" or "north":
-        SixtyFourthArea()
+        SeventyFourthArea()
     else:
         print("Invalid input")
         t.sleep(1)
@@ -90,10 +93,13 @@ def SixtyFourthArea():
 def SeventyFourthArea():
     s = "74"
     save(s)
-    print("you are outside a village in a massive grassy plain.")
+    print("you are outside the village in a massive grassy plain.\n" \
+    "would you like to enter the villae? (Y/N)")
     choice = input("> ")
+    if (choice == "Y"):
+        PlainsVillage()
     if (choice == "n" or "north"):
-        SeventyFourthArea()
+        EightyFourthArea()
     else:
         print("Invalid input")
         t.sleep(1)
@@ -110,6 +116,19 @@ def EightyFourthArea():
         print("Invalid input")
         t.sleep(1)
         EightyFourthArea()
+
+def PlainsVillage():
+    s = "74-1"
+    save(s)
+    print("You entered the village. Around you are people walking about,\n" \
+    "and houses surrounding you. Would you like to talk to someone? (Y/N)")
+    choice = input("> ")
+    if (choice == "Y"):
+        pass
+    else:
+        print("Invalid input")
+        t.sleep(1)
+        PlainsVillage()
 
 load()
 
