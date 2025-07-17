@@ -1,10 +1,11 @@
 import os.path
-import time 
+import time as t
+import os
 
-t = time
+os.system('cls')  # Clears the terminal
 
 file_exists = os.path.isfile("savefile.txt")
-os.system('cls')  # Clears the terminal
+
 
 #loads the file
 def load():
