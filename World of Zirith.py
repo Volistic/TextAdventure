@@ -6,6 +6,7 @@ os.system('cls')  # Clears the terminal
 
 file_exists = os.path.isfile("savefile.txt")
 
+Note = "Note: Good job you weren't stupid!"
 
 # Ask for save name at the start
 def get_save_name():
@@ -32,11 +33,15 @@ def save(s):
 def areachooser(area):
     area_map = {
         "0": start,
+        "1": OneArea,
+        "2": SecondArea,
+        "45": FourtyFifthArea,
+        "54": FiftyFourthArea,
         "55": Beginningarea,
         "65": SixtyFourthArea,
         "75": SeventyFourthArea,
         "75-1": PlainsVillage,
-        "85": EightyFourthArea
+        "85": EightyFifthArea
 
     }
 
@@ -74,6 +79,76 @@ def start():
         os.system('cls')
         start()
 
+def OneArea():
+    s = "1"
+    save(s)
+    os.system('cls')
+    print("You made it to the top with your Pickaxe.")
+    choice = input("> ").lower()
+    if choice == "n" or choice == "north":
+        pass #Area 11
+    elif choice == "e" or choice == "east":
+        SecondArea()
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        SecondArea()
+
+def SecondArea():
+    s = "2"
+    save(s)
+    os.system('cls')
+    print("Your almost to the top of the mountain using your Pickaxe.")
+    choice = input("> ").lower()
+    if choice == "n" or choice == "north":
+        pass #Area 12
+    elif choice == "e" or choice == "east":
+        SecondArea()
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        OneArea()
+    
+def FourtyFifthArea():
+    s = "45"
+    save(s)
+    os.system('cls')
+    print("You are facing towards an entrance to a cave")
+    choice = input("> ").lower()
+    if choice == "n" or choice == "north":
+        Beginningarea()
+    elif choice == "e" or choice == "east":
+        pass #Area 46
+    elif choice == "w" or choice == "west":
+        pass #Area 44
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FourtyFifthArea()
+
+def FiftyFourthArea():
+    s = "54"
+    save(s)
+    os.system('cls')
+    if "Pickaxe" not in inventory:
+        print("You Can not climb a cliff without tools.\n" \
+        "Do you still want to try? (Y/N)")
+        choice = input("> ")
+        if choice == "Y":
+            print("You tried to climb the cliff with nothing\n" \
+            "but your hands. You slipped, and fell. The second\n" \
+            "you hit the ground you went splat. Luckily no one\n" \
+            "was around to see you being supid. I warned you not\n" \
+            "to climb without tools.")
+        elif choice == "N":
+            print("Good choice. As a reward for not being stupid!\n" \
+            "I'll give you a Note.")
+            add_to_inventory("rock")
+            FourtyFifthArea()
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FiftyFourthArea()
 
 def Beginningarea():
     s = "55"
@@ -85,14 +160,17 @@ def Beginningarea():
     if choice == "n" or choice == "north":
         SixtyFourthArea()
     elif choice == "e" or choice == "east":
-        FiftySix()
-
+        FiftySixArea()
+    elif choice == "s" or choice == "south":
+        FourtyFifthArea()
+    elif choice == "w" or choice == "west":
+        FiftyFourthArea()
     else:
         print("Invalid input. Try again.")
         t.sleep(1)
         Beginningarea()
 
-def FiftySix():
+def FiftySixArea():
     s = "56"
     os.system('cls')
     print("You are standing infront of a forest. The forest is filled\n" \
@@ -110,11 +188,11 @@ def FiftySix():
             if choice == "start":
                 start()
     elif choice == "Y":
-        FiftySix()
+        FiftySixArea()
     else:
         print("Invalid input")
         t.sleep(1)
-        FiftySix()
+        FiftySixArea()
 
                 
 
@@ -133,7 +211,7 @@ def SixtyFourthArea():
         t.sleep(1)
         SixtyFourthArea()
     elif (choice == "list"):
-        list_inventory()
+        pass #add inventory list here.
         choice = input("> ")
         
     else:
@@ -151,7 +229,7 @@ def SeventyFourthArea():
     if (choice == "Y"):
         PlainsVillage()
     if (choice == "n" or "north"):
-        EightyFourthArea()
+        EightyFifthArea()
     else:
         print("Invalid input try again.")
         t.sleep(1)
@@ -171,7 +249,7 @@ def PlainsVillage():
         t.sleep(1)
         PlainsVillage()
 
-def EightyFourthArea():
+def EightyFifthArea():
     s = "85"
     save(s)
     os.system('cls')
@@ -183,7 +261,7 @@ def EightyFourthArea():
     else:
         print("Invalid input try again.")
         t.sleep(1)
-        EightyFourthArea()
+        EightyFifthArea()
 
 def add_to_inventory(item):
     inventory.append(item)
