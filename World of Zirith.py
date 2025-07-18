@@ -33,8 +33,11 @@ def save(s):
 def areachooser(area):
     area_map = {
         "0": start,
-        "10": TenthArea,
+        "8": EighthArea,
         "9": NinthArea,
+        "10": TenthArea,
+        "11": EleventhArea,
+        "16": SixtenthArea,
         "45": FourtyFifthArea,
         "54": FiftyFourthArea,
         "55": Beginningarea,
@@ -48,7 +51,7 @@ def areachooser(area):
     func = area_map.get(area, lambda: print("Invalid or unknown area."))
     func()
 
-inventory = []  # Global inventory list
+inventory = ["shovel"]  # Global inventory list
 
 
 # Dialog before game starts.
@@ -100,7 +103,7 @@ def NinthArea():
         t.sleep(1)
         NinthArea()
 
-def OneArea():
+def TenthArea():
     s = "10"
     save(s)
     os.system('cls')
@@ -109,13 +112,38 @@ def OneArea():
     if choice == "n" or choice == "north":
         pass #Area 11
     elif choice == "e" or choice == "east":
-        SecondArea()
+        NinthArea()
     else:
         print("Invalid input. Try again.")
         t.sleep(1)
-        NinthArea()
+        TenthArea()
 
-    
+def EleventhArea():
+    s = "11"
+    save(s)
+    os.system('cls')
+    print("There is a small mound of dirt like something is\n" \
+    "buried in the ground. The ground looks very rocky and hard\n" \
+    "to dig through with hands. You might want a shovel. do you have\n" \
+    "one (Y/N)")
+    choice = input("> ")
+    if choice == "Y":
+        if "shovel" not in inventory:
+            print("No you don't go find one.")
+        else:
+            print("Great!!! Would you like to use the shovel? (Y/N)")
+            choice = input("> ")
+            if choice == "Y":
+                print("You dig up a very old, and dirty chest.\n" \
+                "a closer look shows that the chest is made of gold.")
+            elif choice == "N":
+                print("See you again soon.")
+
+def SixtenthArea():
+    s = "16"
+    save(s)
+    os.system('cls')    
+
 def FourtyFifthArea():
     s = "45"
     save(s)
@@ -276,7 +304,9 @@ def add_to_inventory(item):
     inventory.append(item)
 
 def list_inventory():
-    print(inventory)
-
+    for i in inventory:
+        print(i)
+    SixtenthArea()
+    
 load()
 
