@@ -33,8 +33,8 @@ def save(s):
 def areachooser(area):
     area_map = {
         "0": start,
-        "1": OneArea,
-        "2": SecondArea,
+        "10": TenthArea,
+        "9": NinthArea,
         "45": FourtyFifthArea,
         "54": FiftyFourthArea,
         "55": Beginningarea,
@@ -79,8 +79,29 @@ def start():
         os.system('cls')
         start()
 
+def EighthArea():
+    s = "8"
+    save(s)
+    os.system('cls')
+
+def NinthArea():
+    s = "9"
+    save(s)
+    os.system('cls')
+    print("You walk around the open mountain top.\n" \
+    "You feel your as high as dragons like your flying.")
+    choice = input("> ").lower()
+    if choice == "n" or choice == "north":
+        pass #Area 12
+    elif choice == "e" or choice == "east":
+        EighthArea()
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        NinthArea()
+
 def OneArea():
-    s = "1"
+    s = "10"
     save(s)
     os.system('cls')
     print("You made it to the top with your Pickaxe.")
@@ -92,22 +113,8 @@ def OneArea():
     else:
         print("Invalid input. Try again.")
         t.sleep(1)
-        SecondArea()
+        NinthArea()
 
-def SecondArea():
-    s = "2"
-    save(s)
-    os.system('cls')
-    print("Your almost to the top of the mountain using your Pickaxe.")
-    choice = input("> ").lower()
-    if choice == "n" or choice == "north":
-        pass #Area 12
-    elif choice == "e" or choice == "east":
-        SecondArea()
-    else:
-        print("Invalid input. Try again.")
-        t.sleep(1)
-        OneArea()
     
 def FourtyFifthArea():
     s = "45"
@@ -140,6 +147,8 @@ def FiftyFourthArea():
             "you hit the ground you went splat. Luckily no one\n" \
             "was around to see you being supid. I warned you not\n" \
             "to climb without tools.")
+            if choice == "restart":
+                Beginningarea()
         elif choice == "N":
             print("Good choice. As a reward for not being stupid!\n" \
             "I'll give you a Note.")
