@@ -33,11 +33,26 @@ def save(s):
 def areachooser(area):
     area_map = {
         "0": start,
+        "1": FirstArea,
+        "2": SecondArea,
+        "3": ThirdArea,
+        "4": FourthArea,
+        "5": FifthArea,
+        "6": SixtenthArea,
+        "7": SeventhArea,
         "8": EighthArea,
         "9": NinthArea,
         "10": TenthArea,
         "11": EleventhArea,
+        "12": TwelfthArea,
+        "13": ThirteenthArea,
+        "14": FourteenthArea,
+        "15": FifteenthArea,
         "16": SixtenthArea,
+        "17": SeventeenthArea,
+        "18": EighteenthArea,
+        "19": NineteenthArea,
+        "20": TwentythArea,
         "45": FourtyFifthArea,
         "54": FiftyFourthArea,
         "55": Beginningarea,
@@ -82,10 +97,107 @@ def start():
         os.system('cls')
         start()
 
+def FirstArea():
+    s = "1"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FirstArea()
+
+def SecondArea():
+    s = "2"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        SecondArea()
+
+def ThirdArea():
+    s = "3"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        ThirdArea()
+
+def FourthArea():
+    s = "4"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FourthArea()
+
+def FifthArea():
+    s = "5"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FifthArea()
+
+def SixthArea():
+    s = "6"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        SixtenthArea()
+
+def SeventhArea():
+    s = "7"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        SeventhArea()
+
 def EighthArea():
     s = "8"
     save(s)
     os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("")
 
 def NinthArea():
     s = "9"
@@ -139,10 +251,122 @@ def EleventhArea():
             elif choice == "N":
                 print("See you again soon.")
 
+def TwelfthArea():
+    s = "12"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        TwelfthArea()
+
+def ThirteenthArea():
+    s = "13"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        ThirteenthArea()
+
+def FourteenthArea():
+    s = "14"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FourteenthArea()
+
+def FifteenthArea():
+    s = "15"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        FifteenthArea()
+
 def SixtenthArea():
     s = "16"
     save(s)
-    os.system('cls')    
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        SixtenthArea()
+
+def SeventeenthArea():
+    s = "17"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        SeventhArea()
+
+def EighteenthArea():
+    s = "18"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        EighteenthArea()
+
+def NineteenthArea():
+    s = "19"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        NineteenthArea()
+
+def TwentythArea():
+    s = "20"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        TwentythArea()
 
 def FourtyFifthArea():
     s = "45"
