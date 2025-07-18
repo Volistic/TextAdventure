@@ -368,6 +368,32 @@ def TwentythArea():
         t.sleep(1)
         TwentythArea()
 
+def TwentyFirstArea():
+    s = "21"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        TwentyFirstArea()
+
+def TwentySecondArea():
+    s = "22"
+    save(s)
+    os.system('cls')
+    print("")
+    choice = input("> ")
+    if choice == "n":
+        print("")
+    else:
+        print("Invalid input. Try again.")
+        t.sleep(1)
+        TwentySecondArea()
+
 def FourtyFifthArea():
     s = "45"
     save(s)
